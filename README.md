@@ -15,8 +15,32 @@ to correctly split the sentences into phrases and to find the most suitable cate
 
 ## At command line
 
+Assuming that you already have cloned this repository.
+
+### Building from source code
+
 ```
-java -jar tlt.jar -wnpath=path-to-wordnet-database [-inputfile=path-to-input-file] [-outputfile=path-to-output-file] [-tagset=tc|fc]
+$ mvn clean package
+```
+
+### Running
+
+```
+java -jar TopLevelTagger-<version>-jar-with-dependencies.jar -h
+```
+Should output:
+
+```
+usage: TopLevelTagger [-h] -wnpath WNPATH [-inputfile INPUTFILE] [-outputfile OUTPUTFILE] [-tagset {tc,fc}]
+
+optional arguments:
+  -h, --help             show this help message and exit
+  -wnpath WNPATH         path to WordNet database.
+  -inputfile INPUTFILE   data file, one sentence per line
+  -outputfile OUTPUTFILE
+                         result file, one pair <segment: label> per line
+  -tagset {tc,fc}        tc: top class (default) | fc: foundational class)
+
 ```
 
 where:
